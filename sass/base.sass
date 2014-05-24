@@ -1,0 +1,301 @@
+@import compass/css3
+@import compass/utilities
+@import compass/utilities/sprites
+@import compass/css3/background-size
+@import animation
+@import compass/css3/transition
+@import compass/css3/transform
+@import compass/css3/opacity
+@import "bootstrap/_bootstrap.scss"
+
+@mixin viewport-xs
+	@media (max-width: ($screen-sm - 1))
+		@content
+
+@mixin viewport-sm
+	@media (min-width: $screen-sm) and (max-width: ($screen-md - 1))
+		@content
+
+@mixin viewport-md
+	@media (max-width: $screen-md) and (max-width: ($screen-lg - 1))
+		@content
+
+@mixin viewport-lg
+	@media (min-width: $screen-lg)
+		@content
+
+@mixin row-table
+	display: table !important
+	> [class^="col-"]
+		float: none !important
+		display: table-cell !important
+		vertical-align: middle
+		&.td-top
+			vertical-align: top!important
+		&.td-bottom
+			vertical-align: bottom!important
+
+.row-table.row-table-xs
+	@include row-table
+
+@media (min-width: $screen-sm)
+	.row-table
+		@include row-table
+
+.margin-tiny,.margin-small,.margin-medium,.margin-large,.margin-huge
+	display: block
+
+.margin-tiny
+	height: 10px
+
+.margin-small
+	height: 20px
+
+.margin-medium
+	height: 40px
+
+.margin-large
+	height: 60px
+
+.margin-huge
+	height: 100px
+
+.margin-tiny
+	height: 8px
+.margin-small
+	height: 15px
+.margin-medium
+	height: 30px
+.margin-large
+	height: 45px
+.margin-huge
+	height: 75px
+.h1-epic
+	font-size: 68px
+
+@include viewport-lg
+	.margin-tiny
+		height: 10px
+	.margin-small
+		height: 20px
+	.margin-medium
+		height: 40px
+	.margin-large
+		height: 60px
+	.margin-huge
+		height: 100px
+
+@media (max-width: ($screen-md - 1))
+	.margin-tiny
+		height: 5px
+	.margin-small
+		height: 10px
+	.margin-medium
+		height: 20px
+	.margin-large
+		height: 30px
+	.margin-huge
+		height: 45px
+	body
+		font-size: 15px !important
+	h1, .h1
+		font-size: 45px !important
+	h2, .h2
+		font-size: 30px !important
+	h3, .h3
+		font-size: 23px !important
+	h4, .h4
+		font-size: 20px !important
+	small, .small
+		font-size: 11px !important
+	.h1-epic
+		font-size: 60px !important
+
+small, .small
+	font-size: 13px
+	font-weight: 400
+
+header .container > .nav
+	float: right
+	padding-top: 6px
+	zoom: 1
+	li.divider
+		background: $gray
+		margin: 0 0 0 15px
+		width: 1px
+		height: 36px
+		display: block
+	.itemCount
+		position: absolute
+		background: $brand-primary
+		color: #fff
+		font-size: 11px
+		right: -2px
+		top: -6px
+		padding: 0 3px 0 3px
+		border-radius: 2px
+		line-height: 16px
+		height: 16px
+header .container > .nav>li>a
+	padding: 6px 11px
+	color: #000
+	height: 24px
+	+box-sizing(content-box)
+	text-transform: uppercase
+	[class^="i-"], img
+		margin: -3px -5px 0 -5px
+header .container > .nav-pills>li.active
+	zoom: 1
+	display: inline
+	position: relative
+	width: auto
+header .container > .nav-pills>li.PopupOpen>a
+	background: $gray-lighter
+header .container > .nav-pills>li.active>a, header .container > .nav-pills>li.active>a:hover, header .container > .nav-pills>li.active>a:focus, header .container > .nav-pills>li>a:hover, header .container > .nav-pills>li>a:focus,.header-item-switcher.active
+	background-color: $gray-lighter !important
+	color: $brand-primary
+header .container > .nav-pills>li>a:hover, header .container > .nav-pills>li>a:focus
+	background-color: $gray-lighter !important
+header .container > .nav-pills>li
+	margin-left: 15px
+header
+	position: relative
+	z-index: 50
+	font-weight: 400
+	.container
+		position: relative
+
+footer
+	+box-shadow(0 -1px 0 rgba(0,0,0,0.2))
+	.nav
+		margin-left: -10px
+	.nav>li>a
+		padding: 5px 10px
+	.nav>li>a:hover, .nav>li>a:focus,.nav .open>a, .nav .open>a:hover, .nav .open>a:focus
+		background-color: transparent
+	.dropdown-menu
+		top: auto
+		bottom: 110%
+		font-size: 13px
+		li img
+			position: relative
+			left: -8px
+			top: -1px
+	&.footer-no-line
+		+box-shadow(none)
+	&.footer-center-no-line
+		+box-shadow(none)
+		text-align: center
+	.social-links
+		margin-left: -8px
+		span
+			border: 4px solid transparent
+			+box-sizing(content-box)
+			+transition-duration(0.25s)
+			+transition-property(+opacity)
+			&:hover
+				+opacity(0.75)
+	.form-control
+		width: 180px
+		height: 30px
+		display: inline-block
+		vertical-align: middle
+		font-size: 13px
+
+.no-rgba
+	header
+		border-bottom: 1px solid $gray-light
+	.header-item-content
+		border: 1px solid $gray
+
+.uppercase
+	text-transform: uppercase
+
+.btn
+	+transition-duration(0.25s)
+	+transition-property(background-color)
+.btn-md
+	padding-top: 9px
+	padding-bottom: 9px
+
+.list-links-category
+	padding: 0
+	margin: 0
+	dt
+		text-transform: uppercase
+		padding-bottom: 10px
+		color: #000
+	dd,ul,li
+		padding: 0
+		margin: 0
+		list-style: none
+		line-height: 24px
+
+.link-inverted>a:link,.link-inverted>a:visited,.link-inverted>li>a:link,.link-inverted>li>a:visited,a.link-inverted:link,a.link-inverted:visited
+	color: #000
+.link-inverted>a:hover,.link-inverted>li>a:hover,a.link-inverted:hover
+	color: $brand-primary
+
+[class^="i-"]
+	display: inline-block
+	overflow: hidden
+	text-indent: 300px
+	background-repeat: no-repeat
+	vertical-align: middle
+
+$sprites: sprite-map("sprite/*.png", $spacing: 16px)
+$sprites2x: sprite-map("sprite_2x/*.png", $spacing: 16px)
+
+$spritemap-spacing: 50px
+
+=sprite-background($name)
+	background-image: sprite-url($sprites)
+	background-position: sprite-position($sprites, $name)
+	height: image-height(sprite-file($sprites, $name))
+	width: image-width(sprite-file($sprites, $name))
+
+	@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5)
+		background-image: sprite-url($sprites2x)
+		background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2)
+		height: round(image-height(sprite-file($sprites2x, $name)) / 2)
+		width: round(image-width(sprite-file($sprites2x, $name)) /2 )
+
+	+background-size(ceil(image-width(sprite-path($sprites2x)) / 2) auto)
+
+.i-logo-48
+	+sprite-background(logo-48)
+.i-search
+	+sprite-background(search)
+.i-user
+	+sprite-background(user)
+.i-cart
+	+sprite-background(cart)
+.i-search-highlight,.active .i-search
+	+sprite-background(search-highlight)
+.i-user-highlight,.active .i-user
+	+sprite-background(user-highlight)
+.i-cart-highlight,.active .i-cart
+	+sprite-background(cart-highlight)
+.i-gplus
+	+sprite-background(gplus)
+.i-facebook
+	+sprite-background(facebook)
+.i-twitter
+	+sprite-background(twitter)
+.i-instagram
+	+sprite-background(instagram)
+.i-youtube
+	+sprite-background(youtube)
+.i-linkedin
+	+sprite-background(linkedin)
+
+.homepage-one
+	overflow: hidden
+	.homepage-one-image
+		position: relative
+		right: -17%
+	.homepage-one-action
+		.btn
+			margin-right: 40px
+		span
+			padding-left: 20px

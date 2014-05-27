@@ -7,7 +7,7 @@ Imagine that it's your first day at OnePlus and your first task is to help us to
 
 We are using sass syntax with compass preprocessor and bootstrap 3 css framework.
 
-You're received base-system files, mockups from designer and part of OnePlus guidelines.
+You've received base-system files, mockups from designer and part of OnePlus guidelines.
 
 There's no specific deadline for this task.
 
